@@ -10,12 +10,20 @@ return {
   --   end,
   -- },
   {
-      "kylechui/nvim-surround",
-      event = "VeryLazy",
-      config = function()
-          require("nvim-surround").setup({
-              -- Configuration here, or leave empty to use defaults
-          })
-      end
+    "kylechui/nvim-surround",
+    event = "VeryLazy",
+    config = function()
+        require("nvim-surround").setup({
+            -- Configuration here, or leave empty to use defaults
+        })
+    end
   },
+  {
+    "phaazon/hop.nvim",
+    event = "VeryLazy",
+    config = function()
+    -- you can configure Hop the way you like here; see :h hop-config
+      require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
+    end
+  }
 }

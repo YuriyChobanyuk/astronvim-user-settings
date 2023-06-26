@@ -6,11 +6,29 @@
 return {
   -- first key is the mode
   n = {
+    -- TODO find out how to combine visual and normal mode hotkeys
     ["U"] = { "<C-r>", desc = "Redo" },
     ["<leader>y"] = { "\"+y", desc ="Yank to System clipboard" },
     ["<leader>p"] = { "\"+p", desc ="Paste from System clipboard" },
     ["gb"] = { "<C-O>", desc = "Go back" },
     ["gf"] = { "<C-I>", desc = "Go forward" },
+
+    -- Hop plugin setup
+    ["<leader>ss"] = { function() require("hop").hint_char2({}) end },
+    ["<leader>sf"] = { function() require("hop").hint_char1({ direction = require("hop.hint").HintDirection.AFTER_CURSOR, current_line_only = true }) end },
+    ["<leader>sF"] = { function() require("hop").hint_char1({ direction = require("hop.hint").HintDirection.BEFORE_CURSOR, current_line_only = true }) end },
+    ["<leader>st"] = { function() require("hop").hint_char1({ direction = require("hop.hint").HintDirection.AFTER_CURSOR, current_line_only = false }) end },
+    ["<leader>sT"] = { function() require("hop").hint_char1({ direction = require("hop.hint").HintDirection.BEFORE_CURSOR, current_line_only = false }) end },
+    ["<leader>fW"] = {
+      function()
+        require("telescope.builtin").live_grep {
+          additional_args = function(args) return vim.list_extend(args, { "--hidden", "--no-ignore", "-w" }) end,
+        }
+      end,
+      desc = "Find words in all files",
+    },
+
+    ["<leader>fv"] = { function() require("telescope.builtin").treesitter() end, desc = "Search variables" },
 
     ["<leader>gR"] = { function() require("gitsigns").reset_buffer() end, desc = "Reset Git buffer" },
     ["<leader>gr"] = false,
@@ -41,6 +59,13 @@ return {
     ["gb"] = { "<C-O>", desc = "Go back" },
     ["gf"] = { "<C-I>", desc = "Go forward" },
     ["<leader>h"] = false,
+
+    -- Hop plugin setup
+    ["<leader>ss"] = { function() require("hop").hint_char2({}) end },
+    ["<leader>sf"] = { function() require("hop").hint_char1({ direction = require("hop.hint").HintDirection.AFTER_CURSOR, current_line_only = true }) end },
+    ["<leader>sF"] = { function() require("hop").hint_char1({ direction = require("hop.hint").HintDirection.BEFORE_CURSOR, current_line_only = true }) end },
+    ["<leader>st"] = { function() require("hop").hint_char1({ direction = require("hop.hint").HintDirection.AFTER_CURSOR, current_line_only = false }) end },
+    ["<leader>sT"] = { function() require("hop").hint_char1({ direction = require("hop.hint").HintDirection.BEFORE_CURSOR, current_line_only = false }) end },
   },
   t = {
     -- setting a mapping to false will disable it
