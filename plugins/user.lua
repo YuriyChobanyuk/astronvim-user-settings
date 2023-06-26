@@ -13,17 +13,27 @@ return {
     "kylechui/nvim-surround",
     event = "VeryLazy",
     config = function()
-        require("nvim-surround").setup({
-            -- Configuration here, or leave empty to use defaults
-        })
-    end
+      require("nvim-surround").setup {
+        -- Configuration here, or leave empty to use defaults
+      }
+    end,
   },
   {
     "phaazon/hop.nvim",
     event = "VeryLazy",
     config = function()
-    -- you can configure Hop the way you like here; see :h hop-config
-      require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
-    end
-  }
+      -- you can configure Hop the way you like here; see :h hop-config
+      require("hop").setup { keys = "etovxqpdygfblzhckisuran" }
+    end,
+  },
+  {
+    "Pocco81/auto-save.nvim",
+    config = function()
+      require("auto-save").setup {
+        trigger_events = { "InsertLeave", "TextChanged", "BufLeave" }, -- vim events that trigger auto-save. See :h events
+        -- your config goes here
+        -- or just leave it empty :)
+      }
+    end,
+  },
 }

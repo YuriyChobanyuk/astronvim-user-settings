@@ -6,5 +6,6 @@ return {
 
   -- { import = "astrocommunity.colorscheme.onedarkpro-nvim", enabled = true },
   { import = "astrocommunity.colorscheme.catppuccin", enabled = true },
+  { import = "astrocommunity.pack.typescript" }, -- https://github.com/AstroNvim/astrocommunity/blob/main/lua/astrocommunity/pack/typescript/README.md
   -- { import = "astrocommunity.completion.copilot-lua-cmp" },
 }
