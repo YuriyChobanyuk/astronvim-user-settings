@@ -20,37 +20,37 @@ return {
               hl.Comment.fg = c.my_comment
               hl.Comment.italic = true
               hl.Boolean.fg = c.orange
+              hl.Constant.fg = c.text
+              hl.Float.fg = c.orange
+              hl.Label.fg = c.blue
+              hl.Type.fg = c.purple
+              hl.StorageClass.fg = c.purple
+              hl.Typedef.fg = c.cyan
+              hl.Type.fg = c.cyan
+              hl.Special.fg = c.cyan
+              hl.SpecialChar.fg = c.cyan
+              hl.Operator.bold = true
             end,
 
             ["@field"] = { link = "@text" },
             ["@property"] = { link = "@text" },
-            ["@annotation"] = { link = "@variable.builtin" },
-            ["@class"] = { link = "@constructor" },
+            ["@annotation"] = { link = "@variable.builtin" }, -- red
+            ["@class"] = { link = "@constructor" },           -- yellow
             ["@decorator"] = { link = "@variable.builtin" },
             ["@enum"] = { link = "@constructor" },
             ["@event"] = { link = "@variable.builtin" },
             ["@interface"] = { fg = "#56b6c2" },
-            ["@method"] = { link = "@text.math" },
+            ["@method"] = { link = "@text.math" },            -- blue
             ["@function.builtin"] = { link = "@text.math" },
-            ["@tag.attribute.tsx"] = { link = "@parameter" },
+            ["@tag.attribute.tsx"] = { link = "@parameter" }, -- orange
+            ["@tag.attribute.html"] = { link = "@parameter" },
+            ["@none"] = { link = "@text" },
+
+            ["@number.css"] = { link = "@parameter" },
+            ["@property.css"] = { link = "@text" },
           },
         },
       }
     end,
   },
-  -- {
-  --   "nvim-neo-tree/neo-tree.nvim",
-  --   config = function(plugin, opts)
-  --     require("neo-tree")
-  --     -- require "plugins.configs.nvim-neo-tree"(plugin, opts)
-  --     opts.window.width = 60
-  --     -- If you want icons for diagnostic errors, you'll need to define them somewhere:
-  --     -- vim.fn.sign_define("DiagnosticSignError", { text = " ", texthl = "DiagnosticSignError" })
-  --     -- vim.fn.sign_define("DiagnosticSignWarn", { text = " ", texthl = "DiagnosticSignInfo" })
-  --     -- vim.fn.sign_define("DiagnosticSignInfo", { text = " ", texthl = "DiagnosticSignInfo" })
-  --     -- vim.fn.sign_define("DiagnosticSignHint", { text = "", texthl = "DiagnosticSignHint" })
-  --   end,
-  -- },
-  -- You can disable default plugins as follows:
-  -- { "max397574/better-escape.nvim", enabled = false },
 }

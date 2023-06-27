@@ -11,8 +11,9 @@ return {
       "json",
       "sql",
       "html",
-      "css",
       "tsx",
+      "scss",
+      "css",
     })
   end,
 }
