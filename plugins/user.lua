@@ -28,6 +28,7 @@ return {
   },
   {
     "Pocco81/auto-save.nvim",
+    event = "VeryLazy",
     config = function()
       require("auto-save").setup {
         trigger_events = { "InsertLeave", "TextChanged", "BufLeave" }, -- vim events that trigger auto-save. See :h events
@@ -35,5 +36,11 @@ return {
         -- or just leave it empty :)
       }
     end,
+  },
+  {
+    "ckolkey/ts-node-action",
+    event = "VeryLazy",
+    requires = { "nvim-treesitter" },
+    config = function() require("ts-node-action").setup {} end,
   },
 }

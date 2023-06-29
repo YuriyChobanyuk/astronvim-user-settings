@@ -34,13 +34,14 @@ return {
 
             ["@field"] = { link = "@text" },
             ["@property"] = { link = "@text" },
+            ["@label.json"] = { link = "@variable.builtin" },
             ["@annotation"] = { link = "@variable.builtin" }, -- red
-            ["@class"] = { link = "@constructor" },           -- yellow
+            ["@class"] = { link = "@constructor" }, -- yellow
             ["@decorator"] = { link = "@variable.builtin" },
             ["@enum"] = { link = "@constructor" },
             ["@event"] = { link = "@variable.builtin" },
             ["@interface"] = { fg = "#56b6c2" },
-            ["@method"] = { link = "@text.math" },            -- blue
+            ["@method"] = { link = "@text.math" }, -- blue
             ["@function.builtin"] = { link = "@text.math" },
             ["@tag.attribute.tsx"] = { link = "@parameter" }, -- orange
             ["@tag.attribute.html"] = { link = "@parameter" },

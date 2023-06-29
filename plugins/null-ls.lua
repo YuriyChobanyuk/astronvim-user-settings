@@ -14,22 +14,31 @@ return {
       formatting.stylua,
       formatting.prettierd,
       diagnostics.eslint_d,
-      diagnostics.cspell.with {
-        method = null_ls.methods.DIAGNOSTICS_ON_SAVE,
-        diagnostics_postprocess = function(diagnostic)
-          diagnostic.severity = vim.diagnostic.severity["INFO"]
-        end,
-        diagnostic_config = {
-            -- see :help vim.diagnostic.config()
-            underline = true,
-            virtual_text = false,
-            signs = false,
-            update_in_insert = false,
-            severity_sort = false,
-        },
-      },
-      code_actions.cspell,
+      diagnostics.jsonlint,
+      code_actions.eslint_d,
+      code_actions.ts_node_action,
+      -- TODO find out solution with problematic output (error over info)
+      -- diagnostics.cspell.with {
+      --   method = null_ls.methods.DIAGNOSTICS_ON_SAVE,
+      --   diagnostics_postprocess = function(diagnostic)
+      --     diagnostic.severity = vim.diagnostic.severity["INFO"]
+      --   end,
+      --   diagnostic_config = {
+      --       -- see :help vim.diagnostic.config()
+      --       underline = true,
+      --       virtual_text = false,
+      --       signs = false,
+      --       update_in_insert = false,
+      --       severity_sort = true,
+      --   },
+      -- },
+      -- code_actions.cspell,
     }
+    config.debounce = 500
+    config.fallback_severity = vim.diagnostic.severity.INFO
+    config.log_level = "error"
+    config.update_in_insert = false
+
     return config -- return final config table
   end,
 }
