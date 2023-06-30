@@ -43,6 +43,21 @@ local hopMappings = {
   },
 }
 
+local astroMappings = {
+  ["<leader>a"] = { desc = "Astro Update" },
+  ["<leader>ai"] = { function() require("lazy").install() end, desc = "Plugins Install" },
+  ["<leader>as"] = { function() require("lazy").home() end, desc = "Plugins Status" },
+  ["<leader>aS"] = { function() require("lazy").sync() end, desc = "Plugins Sync" },
+  ["<leader>au"] = { function() require("lazy").check() end, desc = "Plugins Check Updates" },
+  ["<leader>aU"] = { function() require("lazy").update() end, desc = "Plugins Update" },
+
+  -- AstroNvim
+  ["<leader>aa"] = { "<cmd>AstroUpdatePackages<cr>", desc = "Update Plugins and Mason Packages" },
+  ["<leader>aA"] = { "<cmd>AstroUpdate<cr>", desc = "AstroNvim Update" },
+  ["<leader>av"] = { "<cmd>AstroVersion<cr>", desc = "AstroNvim Version" },
+  ["<leader>al"] = { "<cmd>AstroChangelog<cr>", desc = "AstroNvim Changelog" },
+}
+
 local commonMappings = {
   ["U"] = { "<C-r>", desc = "Redo" },
   ["<leader>y"] = { '"+y', desc = "Yank to System clipboard" },
@@ -101,6 +116,7 @@ local mappings = {
   -- first key is the mode
   n = {
     ["<leader>h"] = false,
+    ["<leader>/"] = false,
   },
   v = {
     ["<leader>h"] = false,
@@ -114,6 +130,7 @@ assign(mappings.n, telescopeMappings)
 assign(mappings.n, gitsignsMappings)
 assign(mappings.n, neotreeMappings)
 assign(mappings.n, tabMappings)
+assign(mappings.n, astroMappings)
 
 assign(mappings.v, commonMappings)
 assign(mappings.v, hopMappings)
