@@ -1,15 +1,15 @@
 diff --git a/lua/plugins/core.lua b/lua/plugins/core.lua
-index ef733fb..4cbf967 100644
+index ca122d0..53cd25f 100644
 --- a/lua/plugins/core.lua
 +++ b/lua/plugins/core.lua
-@@ -98,8 +98,8 @@ return {
+@@ -109,8 +109,8 @@ return {
    {
      "numToStr/Comment.nvim",
      keys = {
 -      { "gc", mode = { "n", "v" }, desc = "Comment toggle linewise" },
 -      { "gb", mode = { "n", "v" }, desc = "Comment toggle blockwise" },
-+      -- { "gc", mode = { "n", "v" }, desc = "Comment toggle linewise" },
-+      -- { "gb", mode = { "n", "v" }, desc = "Comment toggle blockwise" },
++       { "gc", mode = { "n", "v" }, desc = "Comment toggle linewise" },
++       -- { "gb", mode = { "n", "v" }, desc = "Comment toggle blockwise" },
      },
      opts = function()
        local commentstring_avail, commentstring = pcall(require, "ts_context_commentstring.integrations.comment_nvim")
