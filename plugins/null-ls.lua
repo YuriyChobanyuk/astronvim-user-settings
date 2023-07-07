@@ -12,7 +12,9 @@ return {
     -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
     config.sources = {
       formatting.stylua,
-      formatting.prettierd,
+      formatting.prettierd.with {
+        prefer_local = "node_modules/.bin",
+      },
       diagnostics.eslint_d,
       diagnostics.jsonlint,
       code_actions.eslint_d,
@@ -21,12 +23,12 @@ return {
       diagnostics.cspell.with {
         method = null_ls.methods.DIAGNOSTICS_ON_SAVE,
         diagnostic_config = {
-            -- see :help vim.diagnostic.config()
-            underline = true,
-            virtual_text = false,
-            signs = false,
-            update_in_insert = false,
-            severity_sort = true,
+          -- see :help vim.diagnostic.config()
+          underline = true,
+          virtual_text = false,
+          signs = false,
+          update_in_insert = false,
+          severity_sort = true,
         },
       },
       code_actions.cspell,
