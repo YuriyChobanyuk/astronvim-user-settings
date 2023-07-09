@@ -121,7 +121,9 @@ local mappings = {
   v = {
     ["<leader>h"] = false,
   },
-  t = {},
+  t = {
+    ["<Esc>"] = { "<C-\\><C-n>", desc = "Terminal normal mode" },
+  },
 }
 
 assign(mappings.n, commonMappings)
