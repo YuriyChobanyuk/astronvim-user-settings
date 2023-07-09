@@ -18,7 +18,6 @@ return {
             -- first parameter is the highlight table and the second parameter is the color palette table
             modify_hl_groups = function(hl, c) -- modify_hl_groups function allows you to modify hl groups,
               hl.Comment.fg = c.my_comment
-              hl.Comment.italic = true
               hl.Boolean.fg = c.orange
               hl.Constant.fg = c.text
               hl.Float.fg = c.orange
