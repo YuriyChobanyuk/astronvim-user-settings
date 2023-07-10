@@ -122,7 +122,7 @@ local mappings = {
     ["<leader>h"] = false,
   },
   t = {
-    ["<Esc>"] = { "<C-\\><C-n>", desc = "Terminal normal mode" },
+    ["<C-n>"] = { "<C-\\><C-n>", desc = "Terminal normal mode" },
   },
 }
 
@@ -136,7 +136,5 @@ assign(mappings.n, astroMappings)
 
 assign(mappings.v, commonMappings)
 assign(mappings.v, hopMappings)
-
-assign(mappings.t, tabMappings)
 
 return mappings
