@@ -40,7 +40,6 @@ return {
   {
     "ckolkey/ts-node-action",
     event = "VeryLazy",
-    requires = { "nvim-treesitter" },
     config = function() require("ts-node-action").setup {} end,
   },
 }
