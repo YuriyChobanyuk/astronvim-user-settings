@@ -41,35 +41,35 @@ return {
             modify_hl_groups = function(hl, c) -- modify_hl_groups function allows you to modify hl groups,
               hl.Comment.fg = c.my_comment
               hl.Comment.italic = false
-              hl.Boolean.fg = c.syntax.orange
+              hl.Boolean.fg = c.orange
               hl.Constant.fg = c.text
               hl.Float.fg = c.syntax.orange
-              hl.Label.fg = c.blue
-              hl.Type.fg = c.purple
+              hl.Label.fg = c.purple
+              hl.Type.fg = c.cyan
               hl.StorageClass.fg = c.purple
               hl.Typedef.fg = c.cyan
               hl.Type.fg = c.cyan
-              hl.Special.fg = c.cyan
-              hl.SpecialChar.fg = c.cyan
+              hl.Special.fg = c.text
+              hl.SpecialChar.fg = c.text
               hl.Operator.bold = true
             end,
 
-            ["@annotation"] = { link = "@variable.builtin" }, -- red
+            ["@annotation"] = { link = "@tag" }, -- red
             ["@class"] = { link = "@Structure" }, -- yellow
             ["@tag.attribute.tsx"] = { link = "@parameter" }, -- orange
             ["@method"] = { link = "@text.math" }, -- blue
             ["@interface"] = { fg = "#56b6c2" },
             ["@field"] = { link = "@text" },
             ["@property"] = { link = "@text" },
-            ["@label.json"] = { link = "@variable.builtin" },
-            ["@decorator"] = { link = "@variable.builtin" },
-            ["@enum"] = { link = "@constructor" },
-            ["@event"] = { link = "@variable.builtin" },
+            ["@label.json"] = { link = "@tag" },
+            ["@decorator"] = { link = "@tag" },
+            ["@enum"] = { link = "@Structure" },
+            ["@event"] = { link = "@tag" },
             ["@function.builtin"] = { link = "@text.math" },
             ["@constructor.tsx"] = { link = "@Structure" },
             ["@tag.attribute.html"] = { link = "@parameter" },
             ["@none"] = { link = "@text" },
-
+            ["@type.qualifier.typescript"] = { link = "@Keyword" },
             ["@number.css"] = { link = "@parameter" },
             ["@property.css"] = { link = "@text" },
           },
