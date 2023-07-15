@@ -10,6 +10,16 @@ return {
           global = {},
           astrodark = { -- Extend or modify astrodarks palette colors
             my_comment = "#9999bb",
+            orange = "#d19a66",
+            red = "#DF8489",
+            syntax = {
+              orange = "#d19a66",
+              red = "#DF8489",
+            },
+            ui = {
+              orange = "#d19a66",
+              red = "#DF8489",
+            },
           },
         },
         highlights = {
@@ -18,9 +28,10 @@ return {
             -- first parameter is the highlight table and the second parameter is the color palette table
             modify_hl_groups = function(hl, c) -- modify_hl_groups function allows you to modify hl groups,
               hl.Comment.fg = c.my_comment
-              hl.Boolean.fg = c.orange
+              hl.Comment.italic = false
+              hl.Boolean.fg = c.syntax.orange
               hl.Constant.fg = c.text
-              hl.Float.fg = c.orange
+              hl.Float.fg = c.syntax.orange
               hl.Label.fg = c.blue
               hl.Type.fg = c.purple
               hl.StorageClass.fg = c.purple
