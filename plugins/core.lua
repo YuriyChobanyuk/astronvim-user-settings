@@ -11,14 +11,26 @@ return {
           astrodark = { -- Extend or modify astrodarks palette colors
             my_comment = "#9999bb",
             orange = "#d19a66",
-            red = "#DF8489",
+            red = "#e06c7f",
+            yellow = "#e5c07b",
+            blue = "#61afef",
+            green = "#98c379",
+            cyan = "#56b6c2",
             syntax = {
               orange = "#d19a66",
-              red = "#DF8489",
+              red = "#e06c7f",
+              yellow = "#e5c07b",
+              blue = "#61afef",
+              green = "#98c379",
+              cyan = "#56b6c2",
             },
             ui = {
               orange = "#d19a66",
-              red = "#DF8489",
+              red = "#e06c7f",
+              yellow = "#e5c07b",
+              blue = "#61afef",
+              green = "#98c379",
+              cyan = "#56b6c2",
             },
           },
         },
@@ -42,18 +54,19 @@ return {
               hl.Operator.bold = true
             end,
 
+            ["@annotation"] = { link = "@variable.builtin" }, -- red
+            ["@class"] = { link = "@Structure" }, -- yellow
+            ["@tag.attribute.tsx"] = { link = "@parameter" }, -- orange
+            ["@method"] = { link = "@text.math" }, -- blue
+            ["@interface"] = { fg = "#56b6c2" },
             ["@field"] = { link = "@text" },
             ["@property"] = { link = "@text" },
             ["@label.json"] = { link = "@variable.builtin" },
-            ["@annotation"] = { link = "@variable.builtin" }, -- red
-            ["@class"] = { link = "@constructor" }, -- yellow
             ["@decorator"] = { link = "@variable.builtin" },
             ["@enum"] = { link = "@constructor" },
             ["@event"] = { link = "@variable.builtin" },
-            ["@interface"] = { fg = "#56b6c2" },
-            ["@method"] = { link = "@text.math" }, -- blue
             ["@function.builtin"] = { link = "@text.math" },
-            ["@tag.attribute.tsx"] = { link = "@parameter" }, -- orange
+            ["@constructor.tsx"] = { link = "@Structure" },
             ["@tag.attribute.html"] = { link = "@parameter" },
             ["@none"] = { link = "@text" },
 
