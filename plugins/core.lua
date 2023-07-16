@@ -4,6 +4,15 @@ return {
   {
     "AstroNvim/astrotheme",
     config = function(plugin, opts)
+      local palette = {
+        orange = "#d19a66",
+        red = "#e06c7f",
+        yellow = "#e5c07b",
+        blue = "#61afef",
+        green = "#98c379",
+        cyan = "#56b6c2",
+      }
+
       require("astrotheme").setup {
         palette = "astrodark", -- String of the default palette to use when calling `:colorscheme astrotheme`
         palettes = {
@@ -48,29 +57,28 @@ return {
               hl.Type.fg = c.cyan
               hl.StorageClass.fg = c.purple
               hl.Typedef.fg = c.cyan
-              hl.Type.fg = c.cyan
               hl.Special.fg = c.text
               hl.SpecialChar.fg = c.text
               hl.Operator.bold = true
             end,
 
-            ["@annotation"] = { link = "@tag" }, -- red
-            ["@class"] = { link = "@Structure" }, -- yellow
-            ["@tag.attribute.tsx"] = { link = "@parameter" }, -- orange
-            ["@method"] = { link = "@text.math" }, -- blue
-            ["@interface"] = { fg = "#56b6c2" },
+            ["@annotation"] = { fg = palette.red }, -- red
+            ["@class"] = { fg = palette.yellow }, -- yellow
+            ["@tag.attribute.tsx"] = { fg = palette.orange }, -- orange
+            ["@method"] = { fg = palette.blue }, -- blue
+            ["@interface"] = { fg = palette.cyan },
             ["@field"] = { link = "@text" },
             ["@property"] = { link = "@text" },
-            ["@label.json"] = { link = "@tag" },
-            ["@decorator"] = { link = "@tag" },
-            ["@enum"] = { link = "@Structure" },
-            ["@event"] = { link = "@tag" },
-            ["@function.builtin"] = { link = "@text.math" },
-            ["@constructor.tsx"] = { link = "@Structure" },
-            ["@tag.attribute.html"] = { link = "@parameter" },
+            ["@label.json"] = { fg = palette.red },
+            ["@decorator"] = { fg = palette.red },
+            ["@enum"] = { fg = palette.yellow },
+            ["@event"] = { fg = palette.red },
+            ["@function.builtin"] = { fg = palette.blue },
+            ["@constructor.tsx"] = { fg = palette.yellow },
+            ["@tag.attribute.html"] = { fg = palette.orange },
             ["@none"] = { link = "@text" },
-            ["@type.qualifier.typescript"] = { link = "@Keyword" },
-            ["@number.css"] = { link = "@parameter" },
+            ["@type.qualifier.typescript"] = { fg = palette.purple },
+            ["@number.css"] = { fg = palette.orange },
             ["@property.css"] = { link = "@text" },
           },
         },
