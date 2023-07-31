@@ -3,6 +3,7 @@ return {
   { "goolord/alpha-nvim", enabled = false },
   {
     "AstroNvim/astrotheme",
+    version = "1.7.0",
     config = function(plugin, opts)
       local palette = {
         orange = "#d19a66",
