@@ -1,0 +1,13 @@
+diff --git a/lua/plugins/neo-tree.lua b/lua/plugins/neo-tree.lua
+index 3f204b7..6191f3e 100644
+--- a/lua/plugins/neo-tree.lua
++++ b/lua/plugins/neo-tree.lua
+@@ -114,7 +114,7 @@ return {
+         end,
+       },
+       window = {
+-        width = 30,
++        width = 44,
+         mappings = {
+           ["<space>"] = false, -- disable space until we figure out which-key disabling
+           ["[b"] = "prev_source",
