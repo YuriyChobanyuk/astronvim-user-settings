@@ -27,15 +27,12 @@ return {
     end,
   },
   {
-    "Pocco81/auto-save.nvim",
-    event = "VeryLazy",
-    config = function()
-      require("auto-save").setup {
-        trigger_events = { "InsertLeave", "TextChanged", "BufLeave" }, -- vim events that trigger auto-save. See :h events
-        -- your config goes here
-        -- or just leave it empty :)
-      }
-    end,
+    "glacambre/firenvim",
+
+    -- Lazy load firenvim
+    -- Explanation: https://github.com/folke/lazy.nvim/discussions/463#discussioncomment-4819297
+    lazy = not vim.g.started_by_firenvim,
+    build = function() vim.fn["firenvim#install"](0) end,
   },
   {
     "ckolkey/ts-node-action",
