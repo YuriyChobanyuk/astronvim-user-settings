@@ -11,36 +11,7 @@ local function assign(tbl, props)
 end
 
 local hopMappings = {
-  ["<leader>ss"] = { function() require("hop").hint_char2 {} end },
-  ["<leader>sf"] = {
-    function()
-      require("hop").hint_char1 { direction = require("hop.hint").HintDirection.AFTER_CURSOR, current_line_only = true }
-    end,
-  },
-  ["<leader>sF"] = {
-    function()
-      require("hop").hint_char1 {
-        direction = require("hop.hint").HintDirection.BEFORE_CURSOR,
-        current_line_only = true,
-      }
-    end,
-  },
-  ["<leader>st"] = {
-    function()
-      require("hop").hint_char1 {
-        direction = require("hop.hint").HintDirection.AFTER_CURSOR,
-        current_line_only = false,
-      }
-    end,
-  },
-  ["<leader>sT"] = {
-    function()
-      require("hop").hint_char1 {
-        direction = require("hop.hint").HintDirection.BEFORE_CURSOR,
-        current_line_only = false,
-      }
-    end,
-  },
+  ["<leader>s"] = { function() require("hop").hint_char2 {} end },
 }
 
 local astroMappings = {
@@ -64,6 +35,7 @@ local commonMappings = {
   ["<leader>p"] = { '"+p', desc = "Paste from System clipboard" },
   ["gb"] = { "<C-O>", desc = "Go back" },
   ["gf"] = { "<C-I>", desc = "Go forward" },
+  ["q"] = { "" },
 }
 
 local telescopeMappings = {
